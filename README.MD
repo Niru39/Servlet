@@ -22,7 +22,20 @@ MVC pattern stands for Model-View-Controller. It is used to seperate application
 
 * Open the IDE
 
-* Import the servlet_demos.sql to MySQL server.
+* Create the **servlet-demos database**.
+
+* Execute the below sql query. 
+
+  ```sql
+  CREATE TABLE `student` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `address` varchar(45) DEFAULT NULL,
+  `phone_number` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+  ```
 
 * Go the File / Open the project
 
