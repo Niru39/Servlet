@@ -1,6 +1,5 @@
-## Servlet Basics
-This project contains two servlet class one servlet configured in web.xml and another servlet configured using **@WebServlet** annotation which is 
-available from Servlet API 3.0.
+## Login
+This project demonstrates the difference between include and forward request.
 
 ### Prerequisite
 * Java 8 or higher x64
