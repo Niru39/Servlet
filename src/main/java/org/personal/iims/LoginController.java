@@ -2,10 +2,10 @@ package org.personal.iims;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -29,9 +29,10 @@ public class LoginController extends HttpServlet {
 
         if (userName.equals("admin") && password.equals("admin123")) {
             request.setAttribute("userName", userName);
-            Cookie ck = new Cookie("userName", userName);
-            response.addCookie(ck);
-            response.sendRedirect("/servlet-demos/profile");
+            HttpSession session = request.getSession();
+            session.setAttribute("userName", userName);
+
+            response.sendRedirect(request.getContextPath() + "/profile");
         } else {
             out.println("<font color=red>Either username or password is incorrect</font>");
             request.getRequestDispatcher("/login.jsp").include(request, response);
